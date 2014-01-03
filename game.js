@@ -8,6 +8,12 @@
 		this.bullets = [];
 		this.ship = new Asteroids.Ship([400, 300], [0, 0]);
 
+		this.img = new Image();
+		this.img.onload = function () {
+		  this.ctx.drawImage(this.img, 0, 0);
+		};
+		this.img.src = 'bg.jpg';
+
 		function addAsteroids(numAsteroids) {
 			for (var i = 0; i < numAsteroids; i++) {
 				game.asteroids.push(Asteroids.Asteroid.randomAsteroid(800, 600));
@@ -43,6 +49,7 @@
 			if (asteroid.pos[0] < 0 || asteroid.pos[0] > 800 || asteroid.pos[1] < 0 || asteroid.pos[1] > 600 )
 			{
 				game.asteroids.splice( game.asteroids.indexOf( asteroid ), 1 );
+				game.asteroids.push(Asteroids.Asteroid.randomAsteroid(800, 600));
 			}
 		});
 	}
@@ -50,6 +57,7 @@
 	Game.prototype.draw = function() {
 		var game = this;
 		this.ctx.clearRect(0,0,800, 600);
+		this.ctx.drawImage(this.img, 0, 0);
 		this.ship.draw(game.ctx);
 		this.asteroids.forEach(function(element) {element.draw(game.ctx)});
 		this.bullets.forEach(function(element) {element.draw(game.ctx)});

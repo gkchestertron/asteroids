@@ -7,7 +7,7 @@
 		var y = vel[1]/speed;
 		this.vel = [x * 20,y * 20];
 		this.RADIUS = 3;
-		this.COLOR = "red";
+		this.COLOR = "orange";
 		this.pos = pos.slice(0);
 	}
 	Bullet.inherits(Asteroids.MovingObject);

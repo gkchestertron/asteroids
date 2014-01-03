@@ -4,7 +4,7 @@
 	var Asteroid = Asteroids.Asteroid = function (pos, vel) {
 		Asteroids.MovingObject.apply(this, arguments);
 		this.RADIUS = 15;
-		this.COLOR = "black"
+		this.COLOR = "red"
 	}
 
 	Asteroid.randomAsteroid = function (dimX, dimY) {
