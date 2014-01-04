@@ -40,7 +40,7 @@
 				$('#wrapper').css('background',"url('explosion.gif')");
 				$('#wrapper').css('background-size', 'cover');
 				setTimeout(function () {
-					$('#wrapper').append('<h1 style="position:relative;top:-200px;left:150px;color:#fff;font-size:92px;;">You Lose!!!</h1>');
+					$('#wrapper').append('<h1 style="position:relative;top:-300px;left:150px;color:#fff;font-size:92px;;">You Lose!!!</h1>');
 				}, 500);
 			}
 
