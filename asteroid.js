@@ -3,7 +3,7 @@
 
 	var Asteroid = Asteroids.Asteroid = function (pos, vel) {
 		Asteroids.MovingObject.apply(this, arguments);
-		this.RADIUS = 15;
+		this.RADIUS = 25;
 		this.COLOR = "red"
 		this.img = new Image();
 		this.img.src = 'asteroid.png';
