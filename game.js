@@ -35,12 +35,30 @@
 		var game = this;
 		game.asteroids.forEach(function (element) {
 			var bool = element.isCollidedWith(game.ship);
+			function youLose() {
+				game.ctx.clearRect(0,0,800, 600);
+				$('#wrapper').css('background',"url('explosion.gif')");
+				$('#wrapper').css('background-size', 'cover');
+				setTimeout(function () {
+					$('#wrapper').append('<h1 style="position:relative;top:-200px;left:150px;color:#fff;font-size:92px;;">You Lose!!!</h1>');
+				}, 500);
+			}
+
 			if (bool)
 			{
 				game.stop();
-				alert("You Lose!")
+				youLose();
 			}
 		});
+
+		if (game.asteroids.length === 0) 
+		{
+			game.stop();
+			$('#wrapper').append('<img style="position:relative;top:-600px;left:300px;" src="win.gif">');
+			setTimeout(function () {
+					$('#wrapper').append('<h1 style="position:relative;top:-600px;left:150px;color:#fff;font-size:92px;;">You Win!!!</h1>');
+				}, 500);
+		}
 	}
 
 	Game.prototype.checkInBounds = function () {
