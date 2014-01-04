@@ -52,6 +52,18 @@
 				game.asteroids.push(Asteroids.Asteroid.randomAsteroid(800, 600));
 			}
 		});
+
+		if (game.ship.pos[0] < 0)     
+		{
+			game.ship.pos[0] = 800;
+		} else if (game.ship.pos[0] > 800) {
+			game.ship.pos[0] = 0;
+		} else if (game.ship.pos[1] < 0) {
+			game.ship.pos[1] = 600;
+		} else if (game.ship.pos[1] > 600) {
+			game.ship.pos[1] = 0;
+		}
+		
 	}
 
 	Game.prototype.draw = function() {
