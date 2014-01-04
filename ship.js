@@ -3,12 +3,18 @@
 
 	var Ship = Asteroids.Ship = function (pos, vel) {
 		Asteroids.MovingObject.apply(this, arguments);
-		this.RADIUS = 10;
+		this.RADIUS = 25;
 		this.COLOR = "green";
+		this.img = new Image();
+		this.img.src = 'ship.png'
 
 
 	}
 	Ship.inherits(Asteroids.MovingObject);
+
+	Ship.prototype.draw = function (ctx) {
+	  ctx.drawImage(this.img, this.pos[0] - this.RADIUS, this.pos[1] - this.RADIUS);
+	}
 
 	Ship.prototype.power = function (impulse) {
 		this.vel[0] += impulse[0];

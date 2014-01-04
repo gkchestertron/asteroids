@@ -5,6 +5,13 @@
 		Asteroids.MovingObject.apply(this, arguments);
 		this.RADIUS = 15;
 		this.COLOR = "red"
+		this.img = new Image();
+		this.img.src = 'asteroid.png';
+	}
+	Asteroid.inherits(Asteroids.MovingObject);
+
+	Asteroid.prototype.draw = function (ctx) {
+	  ctx.drawImage(this.img, this.pos[0] - this.RADIUS, this.pos[1] - this.RADIUS);
 	}
 
 	Asteroid.randomAsteroid = function (dimX, dimY) {
@@ -13,7 +20,7 @@
 		return new Asteroid(pos, vel);
 	}
 
-	Asteroid.inherits(Asteroids.MovingObject);
+	
 
 
 
